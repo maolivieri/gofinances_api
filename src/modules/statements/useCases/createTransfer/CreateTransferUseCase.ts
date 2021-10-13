@@ -32,6 +32,8 @@ export class CreateTransferUseCase {
       }
     }
 
+    console.log(type)
+
     const statementOperationToTheReceipent = await this.statementsRepository.create({
       user_id,
       sender_id,

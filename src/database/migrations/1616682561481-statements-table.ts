@@ -32,7 +32,7 @@ export class accountsTable1616682561481 implements MigrationInterface {
         {
           name: 'type',
           type: 'enum',
-          enum: ['deposit', 'withdraw']
+          enum: ['deposit', 'withdraw', 'transfer']
         },
         {
           name: 'created_at',
@@ -55,7 +55,7 @@ export class accountsTable1616682561481 implements MigrationInterface {
           onDelete: 'CASCADE'
         },
         {
-          name: 'statements',
+          name: 'statements_sender',
           columnNames: ['sender_id'],
           referencedTableName: 'users',
           referencedColumnNames: ['id'],

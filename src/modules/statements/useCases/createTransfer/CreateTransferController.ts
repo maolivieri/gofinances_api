@@ -15,10 +15,8 @@ export class CreateTransferController {
     const { user_id } = request.params;
     const { amount, description } = request.body;
 
-    // const splittedPath = request.originalUrl.split('/')
-    // const type = splittedPath[splittedPath.length - 1] as OperationType;
-
     const type = 'transfer' as OperationType;
+    console.log(type)
 
     const createTransfer = container.resolve(CreateTransferUseCase);
 
