@@ -44,6 +44,7 @@ describe("Get Statement Operation", () => {
 
     const depositTransaction = await createStatementUseCase.execute({
       user_id,
+      sender_id: user_id,
       type: "deposit" as OperationType,
       amount: 123,
       description: "initial deposit",
@@ -71,6 +72,7 @@ describe("Get Statement Operation", () => {
 
       const depositTransaction = await createStatementUseCase.execute({
         user_id,
+        sender_id: user_id,
         type: "deposit" as OperationType,
         amount: 123,
         description: "initial deposit",
@@ -97,6 +99,7 @@ describe("Get Statement Operation", () => {
 
       await createStatementUseCase.execute({
         user_id,
+        sender_id: user_id,
         type: "deposit" as OperationType,
         amount: 123,
         description: "initial deposit",

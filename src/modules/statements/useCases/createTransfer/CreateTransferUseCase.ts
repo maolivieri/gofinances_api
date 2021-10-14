@@ -16,9 +16,7 @@ export class CreateTransferUseCase {
   ) {}
 
   async execute({ user_id, type, amount, description, sender_id }: ICreateTransferDTO) {
-    const user = await this.usersRepository.findById(user_id);
-
-    // const sender_user = await this.usersRepository.findById(sender_id);
+    const user = await this.usersRepository.findById(user_id)
 
     if(!user) {
       throw new CreateTransferError.UserNotFound();
@@ -31,8 +29,6 @@ export class CreateTransferUseCase {
         throw new CreateTransferError.InsufficientFunds()
       }
     }
-
-    console.log(type)
 
     const statementOperationToTheReceipent = await this.statementsRepository.create({
       user_id,

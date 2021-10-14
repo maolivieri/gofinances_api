@@ -44,6 +44,7 @@ describe("Get Balance", () => {
 
     await createStatementUseCase.execute({
       user_id,
+      sender_id: user_id,
       type: "deposit" as OperationType,
       amount: 123,
       description: "initial deposit",

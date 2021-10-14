@@ -44,6 +44,7 @@ describe("Create Statement", () => {
 
     const depositTransaction = await createStatementUseCase.execute({
       user_id,
+      sender_id: user_id,
       type: "deposit" as OperationType,
       amount: 123,
       description: "initial deposit",
@@ -66,6 +67,7 @@ describe("Create Statement", () => {
 
     await createStatementUseCase.execute({
       user_id,
+      sender_id: user_id,
       type: "deposit" as OperationType,
       amount: 123,
       description: "initial deposit",
@@ -73,6 +75,7 @@ describe("Create Statement", () => {
 
     const withdrawTransaction = await createStatementUseCase.execute({
       user_id,
+      sender_id: user_id,
       type: "withdraw" as OperationType,
       amount: 23,
       description: "first withdraw",
@@ -90,6 +93,7 @@ describe("Create Statement", () => {
 
       await createStatementUseCase.execute({
         user_id,
+        sender_id: user_id,
         type: "deposit" as OperationType,
         amount: 123,
         description: "initial deposit",
@@ -103,6 +107,7 @@ describe("Create Statement", () => {
 
       await createStatementUseCase.execute({
         user_id,
+        sender_id: user_id,
         type: "withdraw" as OperationType,
         amount: 23,
         description: "first withdraw",
@@ -122,6 +127,7 @@ describe("Create Statement", () => {
 
       await createStatementUseCase.execute({
         user_id,
+        sender_id: user_id,
         type: "deposit" as OperationType,
         amount: 123,
         description: "initial deposit",
@@ -129,6 +135,7 @@ describe("Create Statement", () => {
 
       await createStatementUseCase.execute({
         user_id,
+        sender_id: user_id,
         type: "withdraw" as OperationType,
         amount: 124,
         description: "first withdraw",
